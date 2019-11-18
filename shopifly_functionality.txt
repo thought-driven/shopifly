@@ -1,0 +1,26 @@
+As a user
+When I am at the command line inside of a Shopify theme repository
+
+And I am on the master branch
+
+And I type “fly branch my-branch-name”
+
+Then the branch “my-branch-name” is created in git and checked out
+
+And my Shopify shop has a new theme called “my-branch-name” which is a duplicate of the master branch
+
+
+Checks you are in a master branch?
+Checks you are in a shopify theme repository?
+Shopify API to get master branch and make a copy and rename copy with new branch name
+Serve new theme ID
+
+add option to specify which theme you would like to copy and rename
+if no option is provided search for theme with name: "master" or role: "main"
+
+
+
+
+-------
+` ` to run commands? is there another way?
+
