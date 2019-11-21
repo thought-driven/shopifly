@@ -19,6 +19,9 @@ add option to specify which theme you would like to copy and rename
 if no option is provided search for theme with name: "master" or role: "main"
 
 
+LEE
+You should basically select what store you want to be working on. And then Shopifly should manage keeping branches / themes in sync within that store. And there should be shortcuts, i.e. fly preview which opens the theme preview in the browser.
+
 
 
 -------

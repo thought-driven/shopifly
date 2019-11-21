@@ -1,9 +1,5 @@
 # Shopifly
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/shopifly`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When I am at the command line inside of a Shopify theme repository
+
+And I am on the master branch
+
+And I type “fly branch my-branch-name”
+
+Then the branch “my-branch-name” is created in git and checked out
+
+And my Shopify shop has a new theme called “my-branch-name” which is a duplicate of the master branch
 
 ## Development
 

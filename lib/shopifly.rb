@@ -13,15 +13,10 @@ module Shopifly
       # puts "#{name} is your new branch"
 
       #Define these elsewhere
-      username = "d194df24c655c4aa782e252f26a1b8c9"
-      password = "d6784bd0c4936f4cc0806a47a8044045"
-      shop = 'mw-qa'
-      api_version = '2019-10'
-
-      # username = ENV["API_KEY"]
-      # password = ENV["PASSWORD"]
-      # shop = ENV["SHOPIFY_SHOP"]
-      # api_version = ENV["API_VERSION"]
+      username = ""
+      password = ""
+      shop = ''
+      api_version = ''
 
       #Make Faraday object with url and authentication
       conn = Faraday.new(url: "https://#{shop}.myshopify.com/")
@@ -56,9 +51,8 @@ module Shopifly
         asset_keys << asset["key"]
       end
 
-      
-
       puts asset_keys
+
     end
 
     private
@@ -66,8 +60,8 @@ module Shopifly
     def get_themes_from_shopify(username:, password:,
       shop:, api_version:, resource:)
     end
-    
   end
+
   class Error < StandardError; end
   # Your code goes here...
 end
