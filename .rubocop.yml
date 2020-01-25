@@ -1,0 +1,52 @@
+AllCops:
+  TargetRubyVersion: 2.6.3
+  Exclude:
+    - db/schema.rb
+    - vendor/**/*
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+    - spec/factories.rb
+    - spec/**/*_spec.rb
+
+Metrics/ClassLength:
+  Exclude:
+    - lib/helpers/seeder.rb
+  Max: 130
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/LineLength:
+  Exclude:
+    - lib/helpers/seeder.rb
+    - config/environments/*
+    - db/migrate/*
+
+Metrics/MethodLength:
+  Exclude:
+    - lib/helpers/seeder.rb
+  Max: 25
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
