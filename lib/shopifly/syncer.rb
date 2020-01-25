@@ -1,8 +1,6 @@
 require "yaml"
-require "pry"
 require "shopify_api"
-
-DEPLOY_COMMAND = ENV["SHOPIFY_DEPLOY_CMD"] || "yarn deploy"
+require "pry"
 
 module Shopifly
   class Syncer
@@ -11,6 +9,7 @@ module Shopifly
       @config = YAML.safe_load(file)
 
       @shared_config = @config["shared_config"]
+      @deploy_command = @shared_config["deploy_command"]
       @current_store = File.read(".current_store").strip
       @current_branch = `git branch | grep \\* | cut -d ' ' -f2`.strip
       store_config = @config["stores"][@current_store]
@@ -59,13 +58,11 @@ module Shopifly
           set_config_for(current_theme, false)
         end
       end
-
-      p "`yarn open && yarn start` to open and edit your new theme!"
     end
 
     def deploy_theme
       p "Uploading theme!"
-      system DEPLOY_COMMAND
+      system @deploy_command
     end
 
     def with_settings_json(current_theme, default_theme)
@@ -81,11 +78,13 @@ module Shopifly
     end
 
     def default_theme
-      themes_array = ShopifyAPI::Theme.find(:all)
+      @default_theme ||= begin
+        themes_array = ShopifyAPI::Theme.find(:all)
 
-      themes_array.select do |theme|
-        theme.attributes["role"] == "main"
-      end.first
+        themes_array.select do |theme|
+          theme.attributes["role"] == "main"
+        end.first
+      end
     end
 
     def get_settings_json
@@ -105,7 +104,8 @@ module Shopifly
 
       config = File.read("config.yml")
 
-      if config.include? "theme_name: #{@config['defaults']['branch']}"
+      binding.pry
+      if config.include? "theme_id: #{@default_theme.attributes['id']}"
         raise "Do not push the settings_data to default branch!"
       end
 
