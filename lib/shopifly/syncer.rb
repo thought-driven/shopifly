@@ -104,12 +104,11 @@ module Shopifly
 
       config = File.read("config.yml")
 
-      binding.pry
       if config.include? "theme_id: #{@default_theme.attributes['id']}"
-        raise "Do not push the settings_data to default branch!"
+        raise "Refusing to push settings_data.json to currently published branch"
       end
 
-      system("theme deploy -n config/settings_data.json")
+      system("theme deploy config/settings_data.json")
     end
 
     def create_theme(branch)
@@ -132,6 +131,14 @@ module Shopifly
             ignore_files: #{ignore_files}
 
           development:
+            password: #{@password}
+            theme_name: "#{theme.attributes[:name]}"
+            theme_id: #{theme.attributes[:id]}
+            store: #{@store_url}
+            directory: #{@shared_config['directory']}
+            ignore_files: #{ignore_files}
+
+          production:
             password: #{@password}
             theme_name: "#{theme.attributes[:name]}"
             theme_id: #{theme.attributes[:id]}
