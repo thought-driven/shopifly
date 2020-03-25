@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.summary       = "Shopifly is a command-line utility that helps to enforce branch-theme parity."
   spec.description   = " Shopifly is a command-line utility that helps to enforce branch-theme parity. At this time it is compatible only with `config.yml` based Shopify Themekit setups."
   spec.homepage      = "https://hackmd.io/-qFRvujHQ1enPbHUOylo-Q"
-  spec.documentation = "https://hackmd.io/-qFRvujHQ1enPbHUOylo-Q"
   spec.license       = "GPL3"
 
   spec.files         = Dir.chdir(File.expand_path(__dir__)) do
