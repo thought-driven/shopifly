@@ -1,9 +1,6 @@
 # Shopifly
 
-Shopifly is a command-line utility that simplifies git flows with Shopify's
-themekit.
-
-Shopifly exists to enforce branch-theme parity.
+Shopifly is a command-line utility that helps to enforce branch-theme parity.
 
 At this time it is compatible only with `config.yml` based Shopify Themekit
 setups.
@@ -62,7 +59,6 @@ stores:
   live
     password: xxx
     store: my-shop.myshopify.com
-
 ```
 
 ### .current_store
@@ -156,10 +152,9 @@ gem install --local ~/dev/lunchtime/shopifly/pkg/shopifly-X.X.X.gem
 To install this gem onto your local machine and ruby version (found in
 `.ruby-version`), run `bundle exec rake install`.
 
-To
-release a new version, update the version number in `version.rb`, and then run
-`bundle exec rake release`, which will create a git tag for the version, push
-git commits and tags, and push the `.gem` file to
+To release a new version, update the version number in `version.rb`, and then
+run `bundle exec rake release`, which will create a git tag for the version,
+push git commits and tags, and push the `.gem` file to
 [rubygems.org](https://rubygems.org).
 
 ## License
