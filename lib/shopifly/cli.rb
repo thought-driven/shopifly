@@ -29,17 +29,21 @@ module Shopifly
 
     desc "open", "open the current theme in the browser"
     def open
-      puts "not yet implemented"
+      `theme open`
     end
 
     desc "themes", "open the themes view for the current store"
     def themes
-      puts "not yet implemented"
+      config = Shopifly::Config.new
+      site = config.store_url
+      `open "https://#{site}/admin/themes"`
     end
 
     desc "apps", "open the apps view for the current store"
     def apps
-      puts "not yet implemented"
+      config = Shopifly::Config.new
+      site = config.store_url
+      `open "https://#{site}/admin/apps"`
     end
 
     desc "init", "initialize with defaults"
