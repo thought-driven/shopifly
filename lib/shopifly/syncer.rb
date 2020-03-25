@@ -137,6 +137,14 @@ module Shopifly
             store: #{@store_url}
             directory: #{@shared_config['directory']}
             ignore_files: #{ignore_files}
+
+          production:
+            password: #{@password}
+            theme_name: "#{theme.attributes[:name]}"
+            theme_id: #{theme.attributes[:id]}
+            store: #{@store_url}
+            directory: #{@shared_config['directory']}
+            ignore_files: #{ignore_files}
         CONFIG
       end
     end
