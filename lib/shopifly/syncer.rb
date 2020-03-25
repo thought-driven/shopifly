@@ -108,7 +108,7 @@ module Shopifly
         raise "Refusing to push settings_data.json to currently published branch"
       end
 
-      system("theme deploy -n config/settings_data.json")
+      system("theme deploy config/settings_data.json")
     end
 
     def create_theme(branch)
