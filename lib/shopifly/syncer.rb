@@ -104,7 +104,6 @@ module Shopifly
 
       config = File.read("config.yml")
 
-      binding.pry
       if config.include? "theme_id: #{@default_theme.attributes['id']}"
         raise "Do not push the settings_data to default branch!"
       end
