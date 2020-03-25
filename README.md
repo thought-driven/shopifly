@@ -141,13 +141,26 @@ Assuming we're on a branch called `my-branch-theme`, and `.current_store` ==
 
 ## Development
 
-To install this gem onto your local machine, run `bundle exec rake install`. To
+In this repo:
+
+```
+rake build
+```
+
+In another repo:
+
+```
+gem install --local ~/dev/lunchtime/shopifly/pkg/shopifly-X.X.X.gem
+```
+
+To install this gem onto your local machine and ruby version (found in
+`.ruby-version`), run `bundle exec rake install`.
+
+To
 release a new version, update the version number in `version.rb`, and then run
 `bundle exec rake release`, which will create a git tag for the version, push
 git commits and tags, and push the `.gem` file to
 [rubygems.org](https://rubygems.org).
-
-gem install --local ~/dev/lunchtime/shopifly/pkg/shopifly-0.1.0.gem
 
 ## License
 
