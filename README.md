@@ -8,6 +8,11 @@ Shopifly exists to enforce branch-theme parity.
 At this time it is compatible only with `config.yml` based Shopify Themekit
 setups.
 
+## Dependencies
+
+Shopifly requires the `theme` command to be in your command line. See
+[installation instructions](https://shopify.github.io/themekit/).
+
 ## Installation
 
 Add this line to your application's Gemfile:
