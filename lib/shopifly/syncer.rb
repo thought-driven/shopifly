@@ -105,7 +105,7 @@ module Shopifly
       config = File.read("config.yml")
 
       if config.include? "theme_id: #{@default_theme.attributes['id']}"
-        raise "Do not push the settings_data to default branch!"
+        raise "Refusing to push settings_data.json to currently published branch"
       end
 
       system("theme deploy -n config/settings_data.json")
